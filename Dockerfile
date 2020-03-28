@@ -10,4 +10,6 @@ RUN npm run build
 
 # DEPLOY
 FROM nginx
+# ESTO ES NECESARIO PORQUE ESB lo usa para saber q tiene a mapear este puerto
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
